@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">Puzzlarm</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Set up stuff</string>
+    <string name="title_section2">Other Things</string>
+    <string name="title_section3">And again</string>
+    <string name="title_section4">And again</string>
+    <string name="title_section5">And again</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
