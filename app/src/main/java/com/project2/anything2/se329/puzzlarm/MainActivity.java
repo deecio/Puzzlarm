@@ -1,6 +1,8 @@
 package com.project2.anything2.se329.puzzlarm;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.provider.AlarmClock;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -60,6 +62,10 @@ public class MainActivity extends ActionBarActivity
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
+                Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
+                openNewAlarm.putExtra(AlarmClock.EXTRA_HOUR, 10);
+                openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, 5);
+                startActivity(openNewAlarm);
                 break;
             case 2:
                 mTitle = getString(R.string.title_section2);
