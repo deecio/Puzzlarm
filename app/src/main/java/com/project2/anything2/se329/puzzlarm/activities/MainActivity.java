@@ -1,11 +1,14 @@
 package com.project2.anything2.se329.puzzlarm.activities;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.FrameLayout;
 
 import com.project2.anything2.se329.puzzlarm.R;
 
@@ -22,12 +25,17 @@ public class MainActivity extends ActionBarActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
-    private int currentSelectin = 0;
+    private int currentSelection = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+    }
+
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(R.layout.activity_main);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -37,51 +45,47 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        if(layoutResID != R.layout.activity_main)
+            setMyContentView(layoutResID);
+    }
+
+    protected void setMyContentView(int resid){
+        FrameLayout container = (FrameLayout) findViewById(R.id.container);
+        LayoutInflater inflater = LayoutInflater.from(this);
+        container.addView(inflater.inflate(resid,null,false));
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
 
-        if(position!=currentSelectin) {
+        if(position!= currentSelection) {
+            Intent myIntent;
             switch (position) {
+                case 0:
+                    myIntent = new Intent(this, SetAlarmActivity.class);
+                    //myIntent.putExtra("key", value); //Optional parameters
+                    startActivity(myIntent);
+                    break;
                 case 1:
-//                mTitle = getString(R.string.title_section1);
-//                Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
-//                openNewAlarm.putExtra(AlarmClock.EXTRA_HOUR, 10);
-//                openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, 5);
-//                startActivity(openNewAlarm);
+                    myIntent = new Intent(this, DiviceManagementActivity.class);
+                    //myIntent.putExtra("key", value); //Optional parameters
+                    startActivity(myIntent);
                     break;
                 case 2:
-//                mTitle = getString(R.string.title_section2);
-                    //                Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
-//                openNewAlarm.putExtra(AlarmClock.EXTRA_HOUR, 10);
-//                openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, 5);
-//                startActivity(openNewAlarm);
+                    myIntent = new Intent(this, PuzzleActivity.class);
+                    //myIntent.putExtra("key", value); //Optional parameters
+                    startActivity(myIntent);
                     break;
                 case 3:
-//                mTitle = getString(R.string.title_section3);
-                    //                Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
-//                openNewAlarm.putExtra(AlarmClock.EXTRA_HOUR, 10);
-//                openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, 5);
-//                startActivity(openNewAlarm);
+                     myIntent = new Intent(this, LogInOutActivity.class);
+                    //myIntent.putExtra("key", value); //Optional parameters
+                    startActivity(myIntent);
                     break;
-                case 4:
-//                mTitle = getString(R.string.title_section3);
-                    //                Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
-//                openNewAlarm.putExtra(AlarmClock.EXTRA_HOUR, 10);
-//                openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, 5);
-//                startActivity(openNewAlarm);
-                    break;
-                case 5:
-//                mTitle = getString(R.string.title_section3);
-                    //                Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
-//                openNewAlarm.putExtra(AlarmClock.EXTRA_HOUR, 10);
-//                openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, 5);
-//                startActivity(openNewAlarm);
-                    break;
+
             }
-            currentSelectin = position;
+            currentSelection = position;
         }
     }
 
