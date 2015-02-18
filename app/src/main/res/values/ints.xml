@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="bg_red">#cf1313</integer>
+    <integer name="white_text">#f9f2f2</integer>
+    <integer name="bg_black">#0a0a12</integer>
+</resources>
