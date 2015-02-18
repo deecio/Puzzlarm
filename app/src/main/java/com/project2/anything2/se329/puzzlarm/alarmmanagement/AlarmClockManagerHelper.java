@@ -23,8 +23,8 @@ public class AlarmClockManagerHelper extends BroadcastReceiver {
     public static void cancelAlarms(Context context) {
 
     }
-//
-//    private static PendingIntent createPendingIntent(Context context, AlarmModel model) {
-//        return null;
-//    }
+
+    private static PendingIntent createPendingIntent(Context context, AlarmModel model) {
+        return null;
+    }
 }
