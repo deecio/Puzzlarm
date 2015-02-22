@@ -119,55 +119,55 @@ public class SetAlarmActivity extends MainActivity implements View.OnClickListen
                 break;
             case R.id.mon_button:
                 if(days.contains(Calendar.MONDAY)){
-                    sunday.setBackgroundColor(Color.GRAY);
+                    monday.setBackgroundColor(Color.GRAY);
                     days.remove(days.indexOf(Calendar.MONDAY));
                 }else{
-                    sunday.setBackgroundColor(getResources().getColor(R.color.bg_red));
+                    monday.setBackgroundColor(getResources().getColor(R.color.bg_red));
                     days.add(Calendar.MONDAY);
                 }
                 break;
             case R.id.tues_button:
                 if(days.contains(Calendar.TUESDAY)){
-                    sunday.setBackgroundColor(Color.GRAY);
+                    tuesday.setBackgroundColor(Color.GRAY);
                     days.remove(days.indexOf(Calendar.TUESDAY));
                 }else{
-                    sunday.setBackgroundColor(getResources().getColor(R.color.bg_red));
+                    tuesday.setBackgroundColor(getResources().getColor(R.color.bg_red));
                     days.add(Calendar.TUESDAY);
                 }
                 break;
             case R.id.wed_button:
                 if(days.contains(Calendar.WEDNESDAY)){
-                    sunday.setBackgroundColor(Color.GRAY);
+                    wednesday.setBackgroundColor(Color.GRAY);
                     days.remove(days.indexOf(Calendar.WEDNESDAY));
                 }else{
-                    sunday.setBackgroundColor(getResources().getColor(R.color.bg_red));
+                    wednesday.setBackgroundColor(getResources().getColor(R.color.bg_red));
                     days.add(Calendar.WEDNESDAY);
                 }
                 break;
             case R.id.thurs_button:
                 if(days.contains(Calendar.THURSDAY)){
-                    sunday.setBackgroundColor(Color.GRAY);
+                    thursday.setBackgroundColor(Color.GRAY);
                     days.remove(days.indexOf(Calendar.THURSDAY));
                 }else{
-                    sunday.setBackgroundColor(getResources().getColor(R.color.bg_red));
+                    thursday.setBackgroundColor(getResources().getColor(R.color.bg_red));
                     days.add(Calendar.THURSDAY);
                 }
                 break;
             case R.id.fri_button:
                 if(days.contains(Calendar.FRIDAY)){
-                    sunday.setBackgroundColor(Color.GRAY);
+                    friday.setBackgroundColor(Color.GRAY);
                     days.remove(days.indexOf(Calendar.FRIDAY));
                 }else{
-                    sunday.setBackgroundColor(getResources().getColor(R.color.bg_red));
+                    friday.setBackgroundColor(getResources().getColor(R.color.bg_red));
                     days.add(Calendar.FRIDAY);
                 }
                 break;
             case R.id.sat_button:
                 if(days.contains(Calendar.SATURDAY)){
-                    sunday.setBackgroundColor(Color.GRAY);
+                    saturday.setBackgroundColor(Color.GRAY);
                     days.remove(days.indexOf(Calendar.SATURDAY));
                 }else{
-                    sunday.setBackgroundColor(getResources().getColor(R.color.bg_red));
+                    saturday.setBackgroundColor(getResources().getColor(R.color.bg_red));
                     days.add(Calendar.SATURDAY);
                 }
                 break;
