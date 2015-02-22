@@ -60,6 +60,7 @@ public class NavigationDrawerFragment extends Fragment  {
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
+
     public NavigationDrawerFragment() {
     }
 
@@ -75,6 +76,16 @@ public class NavigationDrawerFragment extends Fragment  {
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mFromSavedInstanceState = true;
+        }
+
+        if(this.getActivity().getClass().equals(PuzzleActivity.class)){
+            mCurrentSelectedPosition = 2;
+        }else if(this.getActivity().getClass().equals(LogInOutActivity.class)){
+            mCurrentSelectedPosition = 3;
+        }else if(this.getActivity().getClass().equals(DiviceManagementActivity.class)){
+            mCurrentSelectedPosition = 1;
+        }else if(this.getActivity().getClass().equals(SetAlarmActivity.class)){
+            mCurrentSelectedPosition = 0;
         }
 
         // Select either the default item (0) or the last selected item.
@@ -192,7 +203,7 @@ public class NavigationDrawerFragment extends Fragment  {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
-    private void selectItem(int position) {
+    public void selectItem(int position) {
         mCurrentSelectedPosition = position;
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
@@ -285,4 +296,6 @@ public class NavigationDrawerFragment extends Fragment  {
          */
         void onNavigationDrawerItemSelected(int position);
     }
+
+
 }

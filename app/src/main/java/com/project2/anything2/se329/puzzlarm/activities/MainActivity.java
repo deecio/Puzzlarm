@@ -30,6 +30,7 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        currentSelection = this.getIntent().getIntExtra("currentSelection",0);
 
     }
 
@@ -41,10 +42,12 @@ public class MainActivity extends ActionBarActivity
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
+
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        mNavigationDrawerFragment.selectItem(currentSelection);
 
         if(layoutResID != R.layout.activity_main)
             setMyContentView(layoutResID);
@@ -61,31 +64,25 @@ public class MainActivity extends ActionBarActivity
         // update the main content by replacing fragments
 
         if(position!= currentSelection) {
-            Intent myIntent;
+            Intent myIntent = new Intent(this,this.getClass());
             switch (position) {
                 case 0:
                     myIntent = new Intent(this, SetAlarmActivity.class);
-                    //myIntent.putExtra("key", value); //Optional parameters
-                    startActivity(myIntent);
                     break;
                 case 1:
                     myIntent = new Intent(this, DiviceManagementActivity.class);
-                    //myIntent.putExtra("key", value); //Optional parameters
-                    startActivity(myIntent);
                     break;
                 case 2:
                     myIntent = new Intent(this, PuzzleActivity.class);
-                    //myIntent.putExtra("key", value); //Optional parameters
-                    startActivity(myIntent);
                     break;
                 case 3:
                      myIntent = new Intent(this, LogInOutActivity.class);
-                    //myIntent.putExtra("key", value); //Optional parameters
-                    startActivity(myIntent);
                     break;
-
             }
             currentSelection = position;
+            myIntent.putExtra("currentSelection", currentSelection);
+            startActivity(myIntent);
+
         }
     }
 
