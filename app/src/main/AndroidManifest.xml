@@ -47,6 +47,10 @@
             android:name=".activities.LogInOutActivity"
             android:label="@string/title_activity_log_in_out" >
         </activity>
+        <activity
+            android:name=".activities.AccountCreation"
+            android:label="@string/title_activity_account_creation" >
+        </activity>
     </application>
 
 </manifest>
