@@ -19,4 +19,5 @@
     <string name="title_activity_divice_management">DiviceManagementActivity</string>
     <string name="title_activity_log_in_out">LogInOutActivity</string>
     <string name="title_activity_puzzle">Puzzles</string>
+    <string name="title_activity_account_creation">AccountCreation</string>
 </resources>
