@@ -1,18 +1,31 @@
 package com.project2.anything2.se329.puzzlarm.activities;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.project2.anything2.se329.puzzlarm.R;
 
-public class LogInOutActivity extends MainActivity {
+public class LogInOutActivity extends MainActivity implements View.OnClickListener {
+
+    @Override
+    public void onClick(View v) {
+        Intent i = new Intent(this, AccountCreation.class);
+        startActivity(i);
+    }
+
+    private Button newAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in_out);
+        newAccount = (Button) findViewById(R.id.new_account_button);
+        newAccount.setOnClickListener(this);
     }
 
 
