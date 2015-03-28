@@ -1,5 +1,6 @@
 package com.project2.anything2.se329.puzzlarm;
 
+import android.app.AlertDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +14,9 @@ public class AlarmReceiverActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receiver);
 
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setTitle("WAKE THE FUCK UP");
+        alertDialog.setMessage("What is the capital of New York");
     }
 
 
