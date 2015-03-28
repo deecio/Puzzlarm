@@ -13,10 +13,6 @@ public class AlarmReceiverActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receiver);
 
-
-
-
-
     }
 
 
